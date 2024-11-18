@@ -1,0 +1,696 @@
+/* ------------  Configurações globais ------------ */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-color: #2F2C2C;
+    --second-bg-color: #181818;
+    --text-color: #fff;
+}
+
+body{
+    background-color: var(--bg-color);
+    font-family: "Roboto Slab", serif;
+}
+
+
+.title{
+    text-align: center;
+    margin: 30px auto;
+}
+
+
+
+.btn{
+    width: 150px;
+    height: 50px;
+    background-color: transparent;
+    color: #00ffff;
+    cursor: pointer;
+    font-weight: 700;
+    border: 1px solid #00ffff;
+    font-family: "Arial", serif;
+    font-size: 15px;
+}
+
+.btn:hover{
+    background-color: #00ffff;
+    color: #fff;
+    box-shadow: 0px 0px 25px #00ffff;
+}
+/*  -------- Configuração Cabeçalho e NavBar --------- */
+.cabecalho{
+    width: 100%;
+    min-height: 90px;
+    background-image: url("../static/images/header/background-header.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding-top: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0px 5px 20px aqua;
+
+
+
+    & .menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 50px;
+
+        & .icon-menu-mobile{
+            display: none;
+        }
+    }
+
+    & .menu ul{
+        display: flex;
+        gap: 30px;
+        list-style-type: none;
+    }
+
+    & .menu li a{
+        position: relative;
+        text-decoration: none;
+        color: var(--text-color);
+        font-size: 20px;
+
+        &::after{
+            content: "";
+            width: 0%;
+            height: 3px;
+            background-color: #0fccee;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            transition: 0.5s ease-in-out;
+        }
+
+        &:hover::after{
+            width: 100%;
+        }
+    }
+
+    & .menu .active a{
+        color: aqua;
+        text-shadow: 0px 5px 15px,
+                     0px 7px 25px aquamarine;
+    }
+
+
+    & .menu .active i{
+        color: aqua !important;
+        text-shadow: 0px 0px 15px,
+        0px 7px 25px aquamarine;
+    }
+
+    & .menu ul .icon-div{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    & .menu ul .icon-div i{
+        color: var(--text-color);
+        font-size: 20px;
+    }
+
+    & .menu .div-logo{
+        position: relative;
+        width: 150px;
+        height: 90px;
+        overflow: hidden;
+    }
+
+
+
+    & .menu .div-logo img{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+
+/*  Carrossel / Banner */
+
+.carrossel{
+    background-color: var(--bg-color);
+    width: 100%;
+    height: 440px;
+
+    & .swiper{
+        width: 1360px;
+        height: 400px;
+    }
+
+    & .swiper img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+}
+
+/* ---------- Seção serviços -------- */
+
+.services{
+    width: 100%;
+    height: 917px;
+    background-image: url(../static/images/serviços/background-services.png);
+    background-color: #181818;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -50px 15px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border-bottom: 1px solid #665858;
+    border-top:  1px solid #665858;
+
+    & .services-div{
+        width: 50vw;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    & .brush-stroke{
+
+        width: 80%;
+        background-image: url("../static//images/serviços/brushStroke.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
+    }
+
+    & .brush-stroke h1{
+        font-size: 40px;
+        font-weight: 500;
+        color: #181818;
+    }
+
+    & .lista-services div{
+        display: flex;
+        gap: 20px;
+        margin-left: 3%;
+
+        & .div-image-iconCerto{
+            width: 78px;
+            height: 78px;
+            top: -9px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h2{
+            font-size: 35px;
+            color: #fff;
+        }
+    }
+
+    & button{
+        width: 430px;
+        height: 120px;
+        font-size: 40px;
+        color: #F9F4F4;
+        text-shadow: 1px 3px 5px #181818;
+        background-color: #665858;
+        border: 0;
+        box-shadow: 0px 10px 0px #2E2929;
+    }
+}
+
+/* ----------- TimeLine  Seção --------------- */
+#timeline{
+    background-image: url("../static/images/timeline/background-timeline.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom: 1px solid #665858;
+}
+
+
+#timeline ul{
+    padding: 100px 0;
+
+    /* Criado a linha - Através da div que envolve o conteúdo */
+    & li{
+        list-style: none;
+        position: relative;
+        width: 6px;
+        margin: 0 auto;
+        padding-top: 50px;
+        background: #07ACF3;
+        box-shadow: 0px 0px 4px #00FFFF;
+    
+    }
+
+    /* ----- Boxes - Conteúdos ------- */
+    & li .timeline-content{
+        position: relative;
+        bottom: 0;
+        width: 400px;
+        padding: 1rem;
+        background: rgba(7, 172, 243, 19%);
+        transition: all 0.5s ease-in-out;
+        border-radius: 5px;
+        box-shadow: 10px 10px 5px #00FFFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        
+
+        & p{
+            color: #fff;
+            padding: 8px;
+        }
+    }
+    
+    /* ----- Seta direita pegando os elementos ímpares dentro de <li></li> mas especificamente as div para não zuar a linha -------- */
+    & li:nth-child(odd) .timeline-content{
+        left: 40px;
+    }
+
+    /* ----- Seta esquerda pegando os elementos ímpares dentro de <li></li>*/
+    & li:nth-child(even) .timeline-content{
+        left: -434px;
+    }
+
+    /* Bolinhas da timeline */
+    & li:after{
+        position: absolute;
+        content: "";
+        left: 50%;
+        bottom: 0;
+        width: 25px;
+        height: 25px;
+        background: #07ACF3;
+        box-shadow: 0px 0px 10px 10px #00FFFF;
+        transform: translateX(-50%);
+        border-radius: 50%;
+    }
+
+/* Base seta com a criação de pseudo elemento */
+    & li .timeline-content::before{
+        position: absolute;
+        content: "";
+        bottom: 5px;
+        width: 0;
+        right: 0;
+        border-style: solid;
+    
+    }
+
+    /*  Seta para a direita */
+    & li:nth-child(odd) .timeline-content::before{
+        left: -15px;
+        border-width: 8px 16px 8px 0px;
+        border-color: transparent rgba(7, 172, 243, 19%);
+    }
+    
+    /*  Seta para a Esquerda */
+    & li:nth-child(even) .timeline-content::before{
+        right: -15px;
+        border-width: 8px 0px 8px 16px;
+        border-color: transparent rgba(7, 172, 243, 19%);
+    }
+
+    & .div-image-timeline{
+        width: 94px;
+        height: 93px;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 6px solid #0d2b38;
+
+        & #egipcio{
+            transform: rotate(-55deg);
+        }
+
+        & #henna{
+            transform: rotate(-56deg);
+        }
+
+        & #personalizado{
+            transform: rotate(-90deg);
+        }
+
+        & #glowLips{
+            transform: rotate(55deg);
+        }
+        & img{
+            width: 100%;
+            height: 100%;
+            
+        }
+    }
+
+}
+
+
+/* ------- Seção informativa ----- */
+
+.info{
+    background-image: url("../static/images/info/background-info.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.info .div-info{
+    display: flex;
+    height: 100vh;
+    .image-info-div{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        animation: direita-scroll 2s ease-in-out;
+        animation-timeline: view();
+        animation-range: cover 0% cover 50%;
+    }
+
+    .image-info-div img{
+        width: 100%;
+        height: 100%;
+    }
+
+    & .text-info{
+        margin: 30px 50px;
+        animation: esquerda-scroll ease-in-out;
+        animation-timeline: view();
+        animation-range: cover 0% cover 50%;
+
+        & p{
+
+            color: #A4A4A4;
+        }
+
+        & .title h1{
+            color: #00ffff;
+        }
+
+        & .title h3{
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        & .button-div{
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+@keyframes direita-scroll {
+    from{
+        opacity: 0;
+        translate: -100vw 0;
+    }
+
+    to{
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+@keyframes esquerda-scroll{
+    from{
+        opacity: 0;
+        translate: 100vw 0;
+    }
+
+    to{
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+
+@media screen and (max-width: 900px){
+
+    /*  ## Cabecalho   */
+
+    .cabecalho{
+        width: 100%;
+        min-height: 100px;
+        background-size: cover;
+    }
+
+    .menu{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0 !important;
+        padding: 10px 30px !important;
+        justify-content: space-between;
+        align-items: center !important;
+
+        & .div-logo{
+            width: 120px !important;
+            height: 70px !important;
+            right: 20px;
+            top: -2px;
+
+        }
+
+        & .icon-menu-mobile{
+            display: block !important;
+            font-size: 25px;
+            color: aqua;
+
+        }
+
+        & ul *, & ul{
+            display: none;
+            position: absolute;
+        }
+    }
+
+
+    /*   ## Carrossel   */
+
+    .carrossel{
+        background-color: var(--bg-color);
+        width: 100%;
+        height: auto;
+
+    
+        & .swiper{
+            width:  100%;
+            height: 100%;
+        }
+    
+        & .swiper img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    
+    
+    }
+
+    /* ## serviços  */
+    .services{
+        height: 100vh;
+        background-image: url(../static/images/serviços/background-services-mobile.png);
+        background-size: 100% 100%;
+        background-position: 50px 14px;
+        border-bottom: 1px solid #665858;
+        border-top:  1px solid #665858;
+        padding: 0;
+
+        & button{
+            width: 45%;
+            height: 90px;
+            font-size: 28px;
+            }
+
+        & .services-div{
+            border: 1px solid #fff;
+            width: 100%;
+            height: 100%;
+            align-items: first baseline;
+            justify-content: center;
+            padding-left: 20px;
+
+            & .brush-stroke{
+                width: 80%;
+                background-image: url("../static//images/serviços/brushStroke.svg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                text-align: center;
+
+                & h1{
+                    font-size: 25px;
+                }
+            }
+        
+            & .lista-services div{
+                display: flex;
+                gap: 20px;
+                margin-left: 0%;
+        
+                & .div-image-iconCerto{
+                    width: 58px;
+                    height: 58px;
+                    top: -12px;
+                }
+        
+                & h2{
+                    font-size: 25px;
+                }
+            }
+        }
+        
+    }
+
+
+    
+        /* ## TimeLine  - Configurações versão Mobile */
+
+        #timeline ul li .timeline-content{
+            width: 250px;
+        }
+    
+        /* -- Lado direito  -- */
+        #timeline ul li:nth-child(odd) .timeline-content{
+            left: 40px;
+        }
+    
+        /* -- Lado Esquerdo  -- */
+        #timeline ul li:nth-child(even) .timeline-content{
+            right: -380px;
+        }
+
+        #timeline ul li{
+            margin-left: 30px;
+        }
+    
+        #timeline ul li .timeline-content{
+            width: calc(100vw - 90px);
+        }
+    
+        /* left side content */
+        #timeline ul li:nth-child(even) .timeline-content{
+            left: 40px;
+        }
+     
+        #timeline ul li:nth-child(even) .timeline-content::before{
+            left: -15px !important;
+            border-width: 8px 16px 8px 0px;
+        }
+
+
+
+    .info{
+        width: 100%;
+        min-height: 110vh;
+
+    
+
+        & .image-info-div{
+            width: 100%;
+            border: 1px solid #fff;
+        }
+
+        & .div-info{
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+    
+    
+    
+            &  .title{
+                width: 100% !important;
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width: 550px){
+    .services{
+        height: 80vh;
+        background-position:30px 14px;
+        & button{
+            padding: 0 5px;
+            width: 130px;
+            height: 60px;
+            font-size: 15px;
+            font-weight: 400;
+            margin-left: 40px;
+            border-radius: 4px;
+            box-shadow: 0px 5px 1px #2E2929;
+        }
+
+        & .services-div .lista-services div{
+            gap: 10px;
+    
+            & .div-image-iconCerto{
+                width: 38px;
+                height: 38px;
+                top: -12px;
+            }
+    
+             h2{
+                font-size: 15px;
+            }
+        }
+    }
+
+    .info{
+        & .div-info{
+            justify-content: center;
+            align-items: center;
+
+
+            & .text-info{
+                width: 100%;
+                padding: 0 20px;
+
+                & p{
+                    text-align: center;
+                }
+
+                & button{
+                    display: block;
+                    margin-top: 40px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 311px){
+    .services{
+        height: 80vh;
+        & .services-div{
+            & button{
+                height: 50px;
+                border-radius: 4px;
+                box-shadow: 0px 5px 1px #2E2929;
+                margin-left: 0;
+            }
+            & .brush-stroke{
+                width: 100%;
+                background-image: url("../static//images/serviços/brushStroke.svg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                text-align: center;
+
+                & h1{
+                    font-size: 20px;
+                }
+            }
+        } 
+    }
+}
