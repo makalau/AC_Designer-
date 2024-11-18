@@ -380,7 +380,11 @@ body{
     }
 
     & .text-info{
-        margin: 30px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 30px;
+
         animation: esquerda-scroll ease-in-out;
         animation-timeline: view();
         animation-range: cover 0% cover 50%;
@@ -513,7 +517,6 @@ body{
             }
 
         & .services-div{
-            border: 1px solid #fff;
             width: 100%;
             height: 100%;
             align-items: first baseline;
@@ -598,7 +601,6 @@ body{
 
         & .image-info-div{
             width: 100%;
-            border: 1px solid #fff;
         }
 
         & .div-info{
@@ -607,6 +609,9 @@ body{
             height: 100%;
     
     
+            & .text-info button{
+                margin: 40px 0px;
+            }
     
             &  .title{
                 width: 100% !important;
@@ -662,7 +667,7 @@ body{
 
                 & button{
                     display: block;
-                    margin-top: 40px;
+                    margin: 40px 0px;
                 }
             }
         }
