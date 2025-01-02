@@ -1,4 +1,10 @@
+/* --- I N S T A L E I   O   T Y P I C A L -- */
+
+
+
+
 /* ------------  Configurações globais ------------ */
+
 *{
     padding: 0;
     margin: 0;
@@ -9,6 +15,7 @@
     --bg-color: #2F2C2C;
     --second-bg-color: #181818;
     --text-color: #fff;
+    --main-color: #3fccee;
 }
 
 body{
@@ -60,7 +67,7 @@ body{
         justify-content: space-between;
         padding: 0px 50px;
 
-        & .icon-menu-mobile{
+        & #icon-menu-mobile{
             display: none;
         }
     }
@@ -132,7 +139,66 @@ body{
     }
 }
 
+/* Menu Mobile */
+.menu-active{
+    left: 0;
+}
 
+.menu-deactive{
+    left: -250px;
+}
+
+.cabecalho-mobile{
+    width: 250px;
+    height: 80vh;
+    background-color: #0d2b38;
+    color: #fff;
+    z-index: 9999;
+    position: absolute;
+    border-radius: 0 0 6px;
+    transition: 0.5s;
+
+    & .menu-mobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 12px;
+    }
+
+    & .menu-mobile ul{
+        list-style-type: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;  
+        align-items: center;
+
+        & div{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 1px solid #00ffff;
+            padding: 20px;
+        }
+
+        & div:last-child{
+            border: 0;
+        }
+
+        & a{
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        & i{
+            font-size: 30px;    
+            color: #000;
+        }
+    }
+}
 
 /*  Carrossel / Banner */
 
@@ -223,6 +289,7 @@ body{
         background-color: #665858;
         border: 0;
         box-shadow: 0px 10px 0px #2E2929;
+        cursor: pointer;
     }
 }
 
@@ -365,13 +432,10 @@ body{
 .info .div-info{
     display: flex;
     height: 100vh;
+
     .image-info-div{
         width: 100%;
         height: 100%;
-        overflow: hidden;
-        animation: direita-scroll 2s ease-in-out;
-        animation-timeline: view();
-        animation-range: cover 0% cover 50%;
     }
 
     .image-info-div img{
@@ -384,10 +448,6 @@ body{
         flex-direction: column;
         justify-content: center;
         padding: 0 30px;
-
-        animation: esquerda-scroll ease-in-out;
-        animation-timeline: view();
-        animation-range: cover 0% cover 50%;
 
         & p{
 
@@ -436,6 +496,223 @@ body{
     }
 }
 
+/* ----- PÁGINA DE SERVIÇOS ------------ */
+
+.services-page-banner{
+    height: 90vh;
+    width: 100%;
+    background-image: url("../static/images/services-page/banner.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.services-page{
+    width: 100%;
+    height: 100%;
+    background-color: var(--second-bg-color);
+
+    & .title-services{
+        padding-top: 40px;
+        font-size: 40px;
+        color: #fff;
+        text-align: center;
+
+        & span{
+            display: inline-block;
+            color: #3fccee;
+        }
+    }
+
+    & .section-services{
+        width: 1300px;
+        margin: 40px auto 10px auto;
+        border: 0.05px solid #A4A4A4;
+        border-radius: 6px;
+        background-color: var(--second-bg-color);
+        padding: 0px 20px 30px 20px;
+
+
+        & .section-services-item{
+            padding: 10px 20px;
+            margin-top: 30px;
+            background-color: #474343;
+            display: flex;
+            gap: 20px;  
+            align-items: center;
+            /* Imagens dos produtos */
+            .image-product-div{
+                width: 400px;
+                height: 200px;
+              
+                & img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+         /* Título e descrição dos produtos */
+         & .description{
+            background-color: #D9D9D9;
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+         }
+
+        }
+    }
+    
+}
+
+/* Página AboutMe */
+
+.banner-aboutMe{
+    margin: 10px 0;
+    width: 100%;
+    height: 450px;
+    background-image: url("../static/images/quem-sou/banner-aboutMe.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+
+.apresentacao{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--second-bg-color);
+    border-radius: 4px;
+    padding: 10px 0px;
+    color: var(--bg-color);
+    font-family: "Georgia";
+
+    & .apresentacao-information{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    & .apresentacao-image-div{
+        width: 396px;
+        height: 510px;
+        overflow: hidden;
+        border-radius: 10px;
+        padding: 20px 20px;
+
+        & img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    & .biografia{
+        width: 950px;
+        height: 470px;  
+        padding: 0px 20px;  
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & .text {
+            text-align: justify;
+            margin-top: 20px;
+            line-height: 25px;
+        }
+    }
+
+}
+
+/* Página de contatos */
+.contatos{
+    background-color: #181818;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+
+    & .formulario{
+        border: 1px solid #00ffff;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 600px;
+        padding: 20px;
+
+        & div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &  label{
+            display: block;
+            padding: 5px 0;
+            color: #00FFFF;
+        }
+
+        & input{
+            background-color: #000;
+            font-size: 18px;
+            border: 0;
+            outline: 0;
+            border: 2px solid #00FFFF;
+            height: 5vh;
+            width: 90%;
+            color: #fff;
+        }
+
+        & .btn{
+            margin: 10px auto 0 auto;
+            background-color: #0d2b38;
+            color: #fff;
+        }
+
+        & textarea{
+            color: #fff;
+            font-size: 18px;
+            background-color: #000;
+            border: 0;
+            outline: 0;
+            border: 2px solid #00FFFF;
+            height: 200px;
+            width: 90%;
+        }
+    }
+}
+
+
+
+
+
+/* RODAPÉ DA PÁGINA */
+
+.rodape{
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 40px;
+    & .social-media{
+        display: flex;
+        gap: 20px;
+    }
+
+    & span{
+        color: #00FFFF;
+        text-shadow: 0 0 15px #00FFFF;
+        cursor: pointer;
+    }
+}
 
 @media screen and (max-width: 900px){
 
@@ -464,7 +741,7 @@ body{
 
         }
 
-        & .icon-menu-mobile{
+        & #icon-menu-mobile{
             display: block !important;
             font-size: 25px;
             color: aqua;
@@ -619,7 +896,114 @@ body{
 
         }
     }
+
+    .services-page{
+        width: 100%;
+        height: 100%;
+
+        & .title-services{
+            font-size: 30px;
+
+        }
+
+        & .section-services{
+            width: 100%;
+        }
+
+        & .section-services-item{
+            width: 100%;
+            flex-direction:column;
+            justify-content: center;
+
+            /* Image produto */
+            & .image-product-div{
+                width: 100% !important;
+                overflow: hidden;
+                border: 5px solid #181818;
+
+                & img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            /* descrição produto */
+            & .description{
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    }
+
+
+    /* PÁGINA ABOUT-ME */
+
+    /* Banner about-me */
+    .banner-aboutMe{
+        background-image: url(../static/images/quem-sou/angelica.jpg);
+        width: 100%;
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-bottom: solid #fff;
+        border-top: solid #fff;
+    }
+
+    /* APRESENTAÇÃO */
+    .apresentacao{
+        width: 100%;
+        height: 100%;
+
+        & .apresentacao-information{
+            width: 100%;
+            flex-direction: column;
+
+            & .apresentacao-image-div{
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+
+                & img{
+                    width: 100%;
+                    height: 100%;
+                    border: 5px solid #A4A4A4;
+                }
+            }
+
+            & .biografia{
+                min-height: 600px;
+                width: 100%;
+                height: 100%;
+                padding: 30px 10;
+                
+                h1{
+                    text-align: center;
+                }
+                p{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .rodape{
+        padding: 20px 0;
+        min-height: 200px !important;
+        flex-direction: column;
+        gap: 20px;
+        
+        & p{
+            text-align: center;
+
+        }
+
+
+        & .social-media{
+            flex-direction: column;
+        }
+    }
 }
+
 
 @media screen and (max-width: 550px){
     .services{
